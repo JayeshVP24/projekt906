@@ -23,6 +23,9 @@ importers:
 
   apps/auth:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.3.4
+        version: 3.3.4(react-hook-form@7.51.0)
       '@projekt906/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -35,6 +38,12 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.51.0
+        version: 7.51.0(react@18.2.0)
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@next/eslint-plugin-next':
         specifier: ^14.0.4
@@ -220,6 +229,9 @@ importers:
       react-hook-form:
         specifier: ^7.51.0
         version: 7.51.0(react@18.2.0)
+      react-pin-field:
+        specifier: ^3.1.5
+        version: 3.1.5(react-dom@18.2.0)(react@18.2.0)
       sonner:
         specifier: ^1.4.3
         version: 1.4.3(react-dom@18.2.0)(react@18.2.0)
@@ -4383,6 +4395,27 @@ packages:
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
+
+  /react-pin-field@3.1.5(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-0WqQkLP3SdBEI08ykZxRNAPnZLEZ7iOm/EE/MNQuFmJAYcUfeNbjc7KB2VvcE/b1iWnS/spmFHpd9eSxvJJQ+g==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-use-bireducer: 1.1.1(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
+  /react-use-bireducer@1.1.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FysDYTxA9TQnzt4HURQBvB2FdFqyNytjIGzvzj3qv7YlOkcDnkJQPNlzcC7RbfDiepxdtbxCgovvLGm/DHjzUA==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18
+      react-dom: ^16.8 || ^17 || ^18
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
