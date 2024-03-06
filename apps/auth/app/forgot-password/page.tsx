@@ -153,7 +153,7 @@ export default function Page() {
                         {resendOtp} {" "} seconds
                       </span>
                     </p>}
-                    {resendOtp === 0 && 
+                    {resendOtp <= 0 && 
                       <button className="text-primary hover:underline"
                         type="button"
                         onClick={erpForm.handleSubmit(onErpSubmit)}
