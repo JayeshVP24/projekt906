@@ -3,13 +3,12 @@ import { Button } from "@projekt906/ui/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
+  FormInput,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@projekt906/ui/components/ui/form"
-import { Input } from "@projekt906/ui/components/ui/input"
 import { 
   Card,
   CardContent,
@@ -24,11 +23,14 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Page() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   })
+
+  const [passwordType, setPasswordType] = useState<"text" | "password">("password")
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     toast("form submitted")
@@ -52,7 +54,7 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>ERP ID</FormLabel>
                     <FormControl>
-                      <Input placeholder="S1032210047" {...field}
+                      <FormInput placeholder="S1032210047" {...field}
                       className="bg-card"/>
                     </FormControl>
                     <FormMessage />
@@ -66,7 +68,7 @@ export default function Page() {
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input type="password" placeholder="*****" {...field}
+                      <FormInput type="password" placeholder="*****" {...field}
                      className="bg-card"
                       />
                     </FormControl>

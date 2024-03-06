@@ -1,11 +1,10 @@
 "use client"
 import { Button } from "@projekt906/ui/components/ui/button";
-import { Input } from "@projekt906/ui/components/ui/input"
 import { Label } from "@projekt906/ui/components/ui/label"
 import {
   Form,
   FormControl,
-  FormDescription,
+  FormInput,
   FormField,
   FormItem,
   FormLabel,
@@ -107,7 +106,7 @@ export default function Page() {
                     <FormItem>
                       <FormLabel>ERP ID</FormLabel>
                       <FormControl>
-                        <Input placeholder="S1032210047" {...field}
+                        <FormInput placeholder="S1032210047" {...field}
                           className="bg-card"/>
                       </FormControl>
                       <FormMessage />
@@ -123,7 +122,7 @@ export default function Page() {
               <form onSubmit={otpForm.handleSubmit(onOtpSubmit)} className="space-y-8">
                 <div className="space-y-2">
                   <Label>Enter 6 digit OTP</Label>
-                  <Input disabled value={erpForm.getValues("erpId")} className="bg-card"/>
+                  <FormInput disabled value={erpForm.getValues("erpId")} className="bg-card"/>
                   <div className="flex gap-4 pt-4">
                     <PinField 
                       className="bg-card" 
@@ -141,7 +140,7 @@ export default function Page() {
                   render={({ field }) => (
                     <FormItem className="space-y-0 !mt-0 !mb-0">
                       <FormControl>
-                        <Input type="hidden" {...field} className="bg-card"/>
+                        <FormInput type="hidden" {...field} className="bg-card invisible"/>
                       </FormControl>
                       <FormMessage className="pt-2" />
                     </FormItem>
@@ -179,7 +178,7 @@ export default function Page() {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input type="password" placeholder="*********" {...field}
+                        <FormInput type="password" placeholder="*********" {...field}
                           className="bg-card"/>
                       </FormControl>
                       <FormMessage />
@@ -193,7 +192,7 @@ export default function Page() {
                     <FormItem>
                       <FormLabel>Confirm Password</FormLabel>
                       <FormControl>
-                        <Input type="password" placeholder="*********" {...field}
+                        <FormInput type="password" placeholder="*********" {...field}
                           className="bg-card"/>
                       </FormControl>
                       <FormMessage />

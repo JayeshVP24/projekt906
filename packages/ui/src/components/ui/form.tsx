@@ -12,6 +12,8 @@ import {
 
 import { cn } from "@ui/lib/utils"
 import { Label } from "@ui/components/ui/label"
+import { Input, InputProps } from "@ui/components/ui/input"
+import { Eye, EyeOff } from "lucide-react"
 
 const Form = FormProvider
 
@@ -83,6 +85,54 @@ const FormItem = React.forwardRef<
   )
 })
 FormItem.displayName = "FormItem"
+
+const FormInput = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    const [passwordType, setPasswordType] = React.useState(type)
+    // Do not use ref on this form input component as it is overridden here 
+    const inputRef = React.useRef<HTMLInputElement | null>(null)
+    ref = inputRef
+    function togglePasswordType() {
+      setPasswordType(passwordType === "password" ? "text" : "password")
+      if(inputRef?.current) {
+      inputRef?.current.focus()
+        setTimeout(function(){ 
+          inputRef?.current?.setSelectionRange(1000, 1000);
+        }, 0);
+      }
+
+    }
+    return (
+      <div className={cn(
+        `bg-transparent flex w-full ring-offset-background rounded-md 
+        border border-input has-[:focus]:outline-none 
+        has-[:focus]:ring-2 has-[:focus]:ring-ring has-[:focus]:ring-offset-2 
+        disabled:cursor-not-allowed disabled:opacity-50`,
+        className
+      )}>
+        <Input
+          ref={inputRef}
+          type={passwordType}
+          className="bg-transparent border-0 pr-0 focus-visible:ring-0 w-full focus-visible:ring-transparent focus-visible:ring-offset-0"
+          {...props}
+        />
+        {type === "password" && (
+          <button
+            type="button"
+            onClick={togglePasswordType}
+            className="px-2">
+            {passwordType === "password" && (
+              <Eye className="stroke-muted-foreground/70 w-4 h-4" />
+            )}
+            {passwordType === "text" && (
+              <EyeOff className="stroke-muted-foreground/70 w-4 h-4" />
+            )}
+          </button>
+        )}
+      </div>
+    )
+  }
+)
 
 const FormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
@@ -168,6 +218,7 @@ export {
   useFormField,
   Form,
   FormItem,
+  FormInput,
   FormLabel,
   FormControl,
   FormDescription,
