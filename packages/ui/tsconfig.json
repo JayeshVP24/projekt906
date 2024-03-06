@@ -1,7 +1,13 @@
 {
   "extends": "@projekt906/typescript-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@ui/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
     "src"
