@@ -66,7 +66,10 @@ export default function Page() {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <span className="flex justify-between text-sm font-medium">
+                      <FormLabel>Password</FormLabel>
+                      <Link href="/forgot-password" className="text-primary">Forgot Password?</Link>
+                    </span>
                     <FormControl>
                       <FormInput type="password" placeholder="*****" {...field}
                      className="bg-card"
@@ -88,7 +91,7 @@ export default function Page() {
         </CardFooter>
       </Card>
       <p className="font-medium text-muted-foreground">
-        Forgot your password? <Link href="/forgot-password" className="text-primary underline">Click here</Link>
+        Forgot your ERP ID? Contact your <a  className="text-primary underline">ERP Cordinator</a>
       </p>
     </main>
   );
