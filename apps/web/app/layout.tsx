@@ -2,6 +2,7 @@ import "@projekt906/ui/globals.css";
 import { Toaster } from "@projekt906/ui/components/ui/sonner"
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import JotaiProvider from "./providers/Jotai";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <Toaster />
+        <JotaiProvider>
+          {children}
+          <Toaster />
+        </JotaiProvider>
       </body>
     </html>
   );

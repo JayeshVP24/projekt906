@@ -10,22 +10,27 @@
   },
   "dependencies": {
     "@projekt906/ui": "workspace:*",
-    "next": "^14.0.4",
+    "@trpc/client": "^10.45.2",
+    "@trpc/next": "^10.45.2",
+    "@trpc/react-query": "^10.45.2",
+    "jotai": "^2.7.0",
+    "next": "^14.1.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^14.0.4",
+    "@next/eslint-plugin-next": "^14.1.3",
     "@projekt906/eslint-config": "workspace:*",
     "@projekt906/typescript-config": "workspace:*",
-    "@types/eslint": "^8.56.1",
-    "@types/node": "^20.10.6",
-    "@types/react": "^18.2.46",
-    "@types/react-dom": "^18.2.18",
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.11.25",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "autoprefixer": "^10.4.18",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.2"
   }
 }
