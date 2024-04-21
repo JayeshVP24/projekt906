@@ -20,12 +20,12 @@ export default function Page() {
         <Button className="px-8">Join</Button>
       </div>
       <div className="pt-4">
-        <Link href="/">
+        <Link href="mailto:agnixerp@gmail.com">
           <Button variant="ghost" size="icon">
             <Image src={Mail} alt="Mail Icon" />
           </Button>
         </Link>
-        <Link href="/">
+        <Link href="https://twitter.com/agnixerp">
           <Button variant="ghost" size="icon">
             <Image src={Twitter} alt="Twitter Icon" />
           </Button>
