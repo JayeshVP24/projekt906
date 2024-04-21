@@ -1,5 +1,5 @@
 {
-  "name": "@projekt906/express-trpc",
+  "name": "@projekt906/express-trpc-sso",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
