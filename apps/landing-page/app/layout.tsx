@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <JotaiProvider>
         <body className={cn(inter.className,
-          `max-w-md mx-auto min-h-screen flex flex-col`)}>
+          `max-w-md mx-auto min-h-screen flex flex-col px-4`)}>
           <Header />
           {children}
           <Footer />
